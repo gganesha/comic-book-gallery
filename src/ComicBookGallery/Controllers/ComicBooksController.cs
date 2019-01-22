@@ -11,32 +11,20 @@ namespace ComicBookGallery.Controllers
         //content result is a action result type by MVC.
         public ActionResult Detail()
         {
-            //to check if today's date
-
-            //RedirectResult() was not used since it cannot implicitly convert type
-            //System.Web.Mvc.RedirectResult to System.Web.Mvc.ContentResult
-            //Hovering over RedirectResult F12, shows it is an ActionResult
-            //Same is found when hovering over ContentResult, shows it is an ActionResult
-            //casting wouldn't solve the issue so changed the top to ActionResult
-            /*
-            if(DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
+            //when switching from variables to Properties, should capitalize
+            ViewBag.SeriesTitle = "The Amazing Spider-Man";
+            ViewBag.IssueNumber = 700;
+            ViewBag.Description = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives... <strong>will Peter Parker?</strong></p>";
+            ViewBag.Artists = new string[]
             {
-                return Redirect("/");
-            }
-            return Content("Hello from the comic books controller!");
-            */
+                "Script: Dan Slott",
+                "Pencils: Humberto Ramos",
+                "Inks: Victor Olazaba",
+                "Colors: Edgar Delgado",
+                "Letters: Chris Eliopoulos"
+            };
+              
             return View();
         }
-        /*
-         --> Using contentresult to display literal string (ComicBooks/Detail)
-        public ContentResult Detail()
-        {
-            return new ContentResult()
-            {
-                Content = "Hello from the comic books controller!";
-            }
-        }
-        */
-        
     }
 }
