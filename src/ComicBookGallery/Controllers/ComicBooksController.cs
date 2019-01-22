@@ -18,11 +18,14 @@ namespace ComicBookGallery.Controllers
             //Hovering over RedirectResult F12, shows it is an ActionResult
             //Same is found when hovering over ContentResult, shows it is an ActionResult
             //casting wouldn't solve the issue so changed the top to ActionResult
+            /*
             if(DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
             {
                 return Redirect("/");
             }
             return Content("Hello from the comic books controller!");
+            */
+            return View();
         }
         /*
          --> Using contentresult to display literal string (ComicBooks/Detail)
